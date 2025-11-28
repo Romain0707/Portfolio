@@ -672,7 +672,7 @@ header #nav-icon.cross span:nth-child(1) {
   transform: rotate(45deg);
 }
 header #nav-icon.cross span:nth-child(2) {
-  display: none;
+  scale: 0;
 }
 header #nav-icon.cross span:nth-child(3) {
   top: 12px;

@@ -173,7 +173,7 @@ header {
                     transform: rotate(45deg);
                 }
                 &:nth-child(2) {
-                    display: none;
+                    scale: 0;
                 }
                 &:nth-child(3) {
                     top: 12px;
