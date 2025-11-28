@@ -155,15 +155,31 @@ header {
 
             &:nth-child(1) {
                 top: 0px;
-                transform-origin: left center;
+                transform-origin: center;
             }
             &:nth-child(2) {
                 top: 12px;
-                transform-origin: left center;
+                transform-origin: center;
             }
             &:nth-child(3) {
                 top: 24px;
-                transform-origin: left center;
+                transform-origin: center;
+            }
+        }
+        &.cross {
+            span {
+                &:nth-child(1) {
+                    top: 12px;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    top: 12px;
+                    transform: rotate(-45deg);
+                }
+                
             }
         }
     }

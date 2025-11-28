@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById('slide-menu');
   const header = document.querySelector('header');
 
-  // --- ton toggle existant ---
   burger.addEventListener('click', () => {
     menu.classList.toggle('open');
+    burger.classList.toggle('cross');
   });
 
   document.querySelectorAll('#slide-menu a').forEach(a => {

@@ -657,15 +657,26 @@ header #nav-icon span {
 }
 header #nav-icon span:nth-child(1) {
   top: 0px;
-  transform-origin: left center;
+  transform-origin: center;
 }
 header #nav-icon span:nth-child(2) {
   top: 12px;
-  transform-origin: left center;
+  transform-origin: center;
 }
 header #nav-icon span:nth-child(3) {
   top: 24px;
-  transform-origin: left center;
+  transform-origin: center;
+}
+header #nav-icon.cross span:nth-child(1) {
+  top: 12px;
+  transform: rotate(45deg);
+}
+header #nav-icon.cross span:nth-child(2) {
+  display: none;
+}
+header #nav-icon.cross span:nth-child(3) {
+  top: 12px;
+  transform: rotate(-45deg);
 }
 
 #slide-menu.dark-mode .slide-ul {
