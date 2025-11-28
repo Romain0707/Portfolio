@@ -1,1 +1,74 @@
+@use "../abstracts/variables" as variable;
 
+@mixin container {
+    max-width: variable.$max-width-container;
+    margin: 0 auto;
+    padding-inline: variable.$padding-inline-container;
+}
+
+@mixin button-style($bg-color: variable.$color-primary, $text-color: variable.$color-secondary) {
+    display: inline-block;
+    color: $text-color;
+    text-decoration: none;
+    border: 1px solid $text-color;
+    border-top: 4px solid $text-color; 
+    padding: 0px 25px 14px 25px; 
+    font-family: variable.$font-family-title;
+    transition: background-color variable.$animation-duration-default ease, color variable.$animation-duration-default ease;
+    cursor: pointer; 
+
+    &:hover {
+        background-color: $text-color;
+        color: $bg-color;
+    }
+}
+
+// Mixin pour les cartes de projet (avec bordures et ombre)
+@mixin card-base-style($border-color: variable.$color-black) {
+    background-color: variable.$color-card-bg;
+    border: 1px solid $border-color;
+    border-top: variable.$border-width-top solid $border-color;
+    box-shadow: 0 20px 40px variable.$color-card-shadow;
+    overflow: hidden;
+}
+
+// Mixin pour les boutons de navigation/liens secondaires (fond sombre, texte clair)
+@mixin secondary-link-style {
+    border: 1px solid variable.$color-secondary; 
+    border-top: variable.$border-width-top solid variable.$color-secondary;
+    color: variable.$color-secondary;
+    padding: 14px 25px;
+    font-family: variable.$font-family-title;
+    text-decoration: none;
+    transition: background-color variable.$transition-default, color variable.$transition-default;
+
+    &:hover {
+        background-color: variable.$color-secondary;
+        color: variable.$color-primary; 
+    }
+}
+
+// Mixin pour les liens avec animation de surlignage
+@mixin link-underline-effect($color: variable.$color-header-link-default) {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: $color;
+    transition: 1s ease; 
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: variable.$nav-link-underline-offset;
+        left: 0;
+        width: 100%;
+        height: variable.$nav-link-underline-height;
+        background-color: $color;
+        transform: scale(0); 
+        transition: transform variable.$transition-default;
+    }
+    
+    &:hover::after {
+        transform: scale(1);
+    }
+}

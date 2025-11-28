@@ -1,78 +1,120 @@
 @use "../abstracts/variables" as variable;
 
+$breakpoint-tablette: 768px;
+$breakpoint-mobile: 450px;
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $breakpoint-tablette) {
+  
+  // --- Header & Navigation ---
+  header {
+    .nav-ul {
+      .nav-li:not(:first-child) {
+        display: none;
+      }
+    }
+  }
 
-    header {
-        .nav-ul {
-            .nav-li{
-                &:not(:first-child) {
-                    display: none;
-                }
-            }
-        }
+  #nav-icon {
+    display: block !important;
+  }
+
+  // --- Main Content ---
+  main {
+    .contact-container {
+      flex-direction: column;
+
+      .info-container {
+        margin-left: 0 !important;
+        margin-top: variable.$spacing-m !important;
+      }
     }
 
-    #nav-icon {
-        display: block!important;
-    }
-
-    main {
-        #hero {
-            .container {
-                
-            }
-        }
-
-        .contact-container {
-            flex-direction: column;
-
-            .info-container {
-                margin-left: 0px!important;
-                margin-top: 5rem!important;
-            }
-        }
-    
+    // Typographie responsive
     h1 {
-        font-size: 30px!important;
+      font-size: 30px !important;
     }
+
     h2 {
-        font-size: 20px!important;
+      font-size: 20px !important;
+    }
+  }
+
+  // --- Projects Showcase ---
+  .projects-showcase {
+    height: 500px !important;
+  }
+
+  .project-node {
+    width: 300px !important;
+    height: 450px !important;
+
+    // États des cards adjacentes
+    &.prev {
+      transform: translateX(-50%) translateZ(-150px) rotateY(30deg) !important;
+      scale: 0;
     }
 
+    &.next {
+      transform: translateX(50%) translateZ(-150px) rotateY(-30deg) !important;
+      scale: 0;
     }
+  }
+
+  // Boutons de navigation
+  #prev-btn {
+    left: 5px !important;
+  }
+
+  #next-btn {
+    right: 5px !important;
+  }
+
+  // --- Modal ---
+  .modal-image-container {
+    height: 200px !important;
+  }
+
+  .modal-title {
+    font-size: 1.5rem !important;
+  }
 }
 
-@media screen and (max-width: 500px) {
-    
-}
 
+// ============================================
+// SMALL MOBILE (≤ 450px)
+// ============================================
+@media screen and (max-width: $breakpoint-mobile) {
+  
+  // --- Projects Showcase ---
+  .projects-showcase {
+    height: 400px !important;
+  }
 
+  .project-node {
+    width: 250px !important;
+    height: 400px !important;
+  }
 
-/* --- 9. Responsive --- */
-@media screen and (max-width: 768px) {
-  .projects-showcase { height: 500px!important; }
-  .project-node { width: 300px!important; height: 450px!important; }
+  // Timeline UI
+  .projects-timeline-btn {
+    top: 110% !important;
+  }
 
-  /* Ajustement des boutons de nav sur mobile */
-  #prev-btn { left: 5px!important; }
-  #next-btn { right: 5px!important; }
+  .projects-timeline-indicator {
+    display: none;
+  }
 
-  .project-node.prev { transform: translateX(-50%) translateZ(-150px) rotateY(30deg)!important; scale: 0;}
-  .project-node.next { transform: translateX(50%) translateZ(-150px) rotateY(-30deg)!important; scale: 0;}
+  // --- Modal ---
+  .modal-image-container {
+    height: 200px !important;
+  }
 
-  .modal-image-container { height: 200px!important; }
-  .modal-title { font-size: 1.5rem!important; }
-}
+  .modal-image-button {
+    padding: 5px 8px !important;
+    font-size: 0.8rem !important;
+  }
 
-@media screen and (max-width: 450px) {
-  .projects-showcase { height: 400px!important; }
-  .project-node { width: 250px!important; height: 400px!important; }
-
-  .projects-timeline-btn { top: 110%!important; }
-  .projects-timeline-indicator { display: none;}
-
-  .modal-image-container { height: 200px!important; }
-  .modal-image-button { padding: 5px 8px!important; font-size: 0.8rem!important; }
-  .modal-title { font-size: 1.2rem!important; }
+  .modal-title {
+    font-size: 1.2rem !important;
+  }
 }

@@ -1,0 +1,122 @@
+// ============================================
+// PALETTE DE COULEURS
+// ============================================
+$color-primary: #000000;
+$color-secondary: #ffffff;
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Couleurs de texte
+$color-text-primary: $color-black;
+$color-text-secondary: rgba(0, 0, 0, 0.8);
+
+// Couleurs d'accent et UI
+$color-accent-primary: $color-black;
+$color-border-light: lightgray;
+
+// Couleurs de composants
+$color-card-bg: $color-white;
+$color-card-shadow: rgba(0, 0, 0, 0.5);
+$color-modal-overlay: rgba(0, 0, 0, 0.9);
+
+
+// ============================================
+// TYPOGRAPHIE
+// ============================================
+
+// Familles de polices
+$font-family-title: "Krona One", sans-serif;
+$font-family-body: "Manrope", sans-serif;
+
+// Tailles de police - Titres
+$font-size-h1: 3.75rem;
+$font-size-h2: 2rem;
+$font-size-section-title: 2rem;
+$font-size-card-title: 1.6rem;
+$font-size-modal-title: 2rem;
+
+// Tailles de police - Corps de texte
+$font-size-p: 1rem;
+$font-size-description: 0.95rem;
+
+
+// ============================================
+// ESPACEMENTS
+// ============================================
+
+// Espacements génériques
+$spacing-xxs: 0.5rem;   // 8px
+$spacing-xs: 1rem;       // 16px
+$spacing-s: 2rem;        // 32px
+$spacing-m: 5rem;        // 80px
+$spacing-l: 7rem;        // 112px
+$spacing-xl: 12rem;      // 192px
+$spacing-xxl: 20rem;     // 320px
+
+// Espacements de composants
+$padding-card-content: 1.563rem;
+$padding-modal-body: 1.875rem;
+$padding-inline-container: 1.25rem;
+
+
+// ============================================
+// DIMENSIONS
+// ============================================
+
+// Conteneurs
+$max-width-container: 1250px;
+
+// Header & Navigation
+$header-height: 10vh;
+$logo-height: 60px;
+$nav-icon-width: 40px;
+$nav-icon-height: 45px;
+$nav-gap-desktop: 3rem;
+$nav-link-underline-height: 2px;
+$nav-link-underline-offset: -4px;
+
+// Cards & Projets
+$card-width-project: 400px;
+$card-height-project: 500px;
+$showcase-height: 600px;
+
+// Éléments UI
+$border-width-top: 4px;
+$navigation-btn-size: 50px;
+$indicator-size: 10px;
+
+
+// ============================================
+// ANIMATIONS & TRANSITIONS
+// ============================================
+
+// Durées d'animation
+$animation-duration-default: 0.3s;
+$slider-animation-duration: 12s;
+
+// Transitions
+$transition-default: 0.3s ease;
+$transition-card: 0.8s ease;
+$transition-timeline: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+// ============================================
+// Z-INDEX
+// ============================================
+$z-index-base: 1;
+$z-index-active-card: 10;
+$z-index-nav: 20;
+$z-index-slide-menu: 9000;
+$z-index-overlay: 1000;
+$z-index-header: 2000;
+$z-index-fixed-icon: 99999;
+
+
+// ============================================
+// COULEURS CONTEXTUELLES (Header)
+// ============================================
+$color-header-border: $color-border-light;
+$color-header-link-default: $color-white;
+$color-header-link-dark: $color-black;
+$color-nav-icon: $color-white;
+$color-nav-icon-dark: $color-black;

@@ -4,6 +4,7 @@
 
 body {
     main {
+        // --- Section #hero (Héros Vidéo) ---
         #hero {
             position: relative;
             height: 100vh;
@@ -19,9 +20,7 @@ body {
             }
 
             .container {
-                max-width: 1250px;
-                margin: 0 auto;
-                padding-inline: 20px;
+                @include mixin.container; // Utilisation du mixin
                 height: 100dvh;
                 display: flex;
                 flex-direction: column;
@@ -30,68 +29,58 @@ body {
 
                 h1 {
                     margin: 0;
-                    color: white;
-                    font-size: 60px;
-                    font-family: "Krona One", sans-serif;
-                    margin-bottom: 1rem;
+                    color: variable.$color-secondary;
+                    font-size: variable.$font-size-h1;
+                    font-family: variable.$font-family-title;
+                    margin-bottom: variable.$spacing-xs;
                 }
 
                 h2 {
                     margin: 0;
-                    color: white;
-                    font-size: 32px;
-                    font-family: "Krona One", sans-serif;
+                    color: variable.$color-secondary;
+                    font-size: variable.$font-size-h2;
+                    font-family: variable.$font-family-title;
                     font-weight: 100;
                     opacity: 80%;
-                    margin-bottom: 0.5rem;
+                    margin-bottom: variable.$spacing-xxs;
                 }
 
                 p {
-                    color: white;
-                    font-size: 16px;
-                    line-height: 2rem;
+                    color: variable.$color-secondary;
+                    font-size: variable.$font-size-p;
+                    line-height: variable.$spacing-s;
                     max-width: 560px;
-                    font-family: "Manrope", sans-serif;
-                    margin-bottom: 2rem;
+                    font-family: variable.$font-family-body;
+                    margin-bottom: variable.$spacing-s;
                 }
+
                 a {
-                    display: inline-block;
-                    color: white;
-                    text-decoration: none;
-                    border: 1px solid white;
-                    border-top: 4px solid white;
-                    padding: 0px 25px 14px 25px;
-                    font-family: "Krona One", sans-serif;
-                    transition: background-color 0.3s ease, color 0.3s ease;
+                    @include mixin.button-style($bg-color: variable.$color-primary, $text-color: variable.$color-secondary);
                     
                     svg {
                         position: relative;
                         bottom: -10px;
                     }
 
-                    &:hover {
-                        background-color: white;
-                        color: black;
-                    }
+                    // Le :hover est inclus dans le mixin, sauf si vous voulez l'écraser.
                 }
-            } 
+            }
         }
 
+        // --- Section #competence (Slider de Compétences) ---
         #competence {
-            padding-bottom: 12rem;
+            padding-bottom: variable.$spacing-xl; // Utilisation de variable.$spacing-xl
             .container {
-                max-width: 1250px;
-                margin: 0 auto;
-                padding-inline: 20px;
+                @include mixin.container; // Utilisation du mixin
 
                 h2 {
-                    font-size: 32px;
-                    font-family: "Krona One", sans-serif;
-                    margin-bottom: 5rem;
+                    font-size: variable.$font-size-h2;
+                    font-family: variable.$font-family-title;
+                    margin-bottom: variable.$spacing-m;
                 }
                 .slider {
                     width: 100%;
-                    height:var(--height);
+                    height:var(--height); // Maintenir les variables CSS pour la dynamique
                     overflow: hidden;
                     mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
 
@@ -107,6 +96,7 @@ body {
                         display: flex;
                         list-style-type: none;
                         padding-left: 0;
+                        // Ne pas modifier les variables CSS ici, les garder pour la logique du slider
                         width: 100%;
                         min-width: calc(var(--width) * var(--quantity));
 
@@ -116,8 +106,8 @@ body {
                             height: var(--height);
                             position: absolute;
                             left: 100%;
-                            animation: autoRun 12s linear infinite;
-                            animation-delay: calc( (12s / var(--quantity) * (var(--position) - 1)));
+                            animation: autoRun variable.$slider-animation-duration linear infinite; // Utilisation de variable.$slider-animation-duration
+                            animation-delay: calc( (variable.$slider-animation-duration / var(--quantity) * (var(--position) - 1))); // Utilisation de variable.$slider-animation-duration
                             
                             &:hover {
                                 filter: grayscale(0);
@@ -132,10 +122,11 @@ body {
             }
         }
 
+        // --- Section #contact (Contact) ---
         #contact {
             position: relative;
-            background-color: black;
-            padding-bottom: 20rem;
+            background-color: variable.$color-primary;
+            padding-bottom: variable.$spacing-xxl; // Utilisation de variable.$spacing-xxl
 
             &::after {
                 content: '';
@@ -145,21 +136,22 @@ body {
                 width: 100%;
                 top: -49px;
                 left: 0;
-                background-color: black;
+                background-color: variable.$color-primary;
+                // Le clip-path reste un ajustement géométrique spécifique
                 clip-path: polygon(70% 0, 0% 100%, 100% 100%);
             }
+
             .container {
-                max-width: 1250px;
-                margin: 0 auto;
-                padding-inline: 20px;
+                @include mixin.container; // Utilisation du mixin
 
                 h2 {
-                    color: white;
-                    padding-top: 7rem;
-                    font-size: 32px;
-                    font-family: "Krona One", sans-serif;
-                    margin-bottom: 5rem;
+                    color: variable.$color-secondary;
+                    padding-top: variable.$spacing-l; // Utilisation de variable.$spacing-l
+                    font-size: variable.$font-size-h2;
+                    font-family: variable.$font-family-title;
+                    margin-bottom: variable.$spacing-m;
                 }
+
                 .contact-container {
                     display: flex;
 
@@ -167,20 +159,20 @@ body {
                         display: flex;
                         flex: 1;
                         flex-direction: column;
-                        background: black;
-                        border: 1px solid white;
-                        border-top: 4px solid white;
+                        background: variable.$color-primary;
+                        border: 1px solid variable.$color-secondary;
+                        border-top: 4px solid variable.$color-secondary;
                         
-                        padding: 50px;
+                        padding: 50px; // Peut être remplacé par une variable si besoin
 
                         input:not([type="submit"]) {
-                            padding: 1rem;
+                            padding: variable.$spacing-xs;
                             appearance: none;
                             border: none;
-                            background: black;
-                            border-bottom: 1px solid white;
-                            font-family: "Manrope", sans-serif;
-                            color: white;
+                            background: variable.$color-primary;
+                            border-bottom: 1px solid variable.$color-secondary;
+                            font-family: variable.$font-family-body;
+                            color: variable.$color-secondary;
 
                             &:focus {
                                 outline: none;
@@ -190,70 +182,63 @@ body {
                         input:is([type="submit"]) {
                             align-self: center;
                             appearance: none;
-                            background-color: black;
+                            background-color: variable.$color-primary;
                             border: none;
-                            color: white;
-                            border: 1px solid white;
-                            border-top: 4px solid white;
-                            font-family: "Krona One", sans-serif;
-                            padding: 14px 25px;
-                            transition: background-color 0.3s ease, color 0.3s ease;  
-
-                            &:hover {
-                                background-color: white;
-                                color: black;
-                            }
+                            color: variable.$color-secondary;
+                            @include mixin.button-style($bg-color: variable.$color-primary, $text-color: variable.$color-secondary);
+                            // Remplacement des styles de bouton par le mixin
+                            padding: 14px 25px; // Ajustement du padding pour correspondre au mixin (peut être déplacé dans le mixin)
                         }
 
                         textarea {
-                            background-color: black;
-                            border-color: white;
-                            color: white;
-                            margin-block: 2rem;
+                            background-color: variable.$color-primary;
+                            border-color: variable.$color-secondary;
+                            color: variable.$color-secondary;
+                            margin-block: variable.$spacing-s; // Utilisation de variable.$spacing-s
                             appearance: none;
-                            padding: 1rem;
+                            padding: variable.$spacing-xs;
                             resize: none;
                             height: 10rem;
-                            font-family: "Manrope", sans-serif;
+                            font-family: variable.$font-family-body;
 
                             &:focus {
                                 outline: none;
                             }
                         }
                     }
-                
-                .info-container {
-                    margin-left: 5rem;
-                    flex: 0.4;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
+                    
+                    .info-container {
+                        margin-left: variable.$spacing-m; // Utilisation de variable.$spacing-m
+                        flex: 0.4;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
 
-                    .line {
-                        margin-block: 1rem;
-                        background-color: white;
-                        height: 2rem;
-                        width: 1px;
-                    }
+                        .line {
+                            margin-block: variable.$spacing-xs;
+                            background-color: variable.$color-secondary;
+                            height: variable.$spacing-s;
+                            width: 1px;
+                        }
 
-                    p {
-                        font-family: "Krona One", sans-serif;
-                        color: white;
-                        margin-bottom: 1rem;
+                        p {
+                            font-family: variable.$font-family-title;
+                            color: variable.$color-secondary;
+                            margin-bottom: variable.$spacing-xs;
+                        }
                     }
-                }
                 }
             }
         }
     }
 }
 
+// L'animation reste en dehors du bloc body pour être globale
 @keyframes autoRun {
     from {
         left: 100%;
     } to {
         left: calc(var(--width)* -1);
     }
-    
 }
