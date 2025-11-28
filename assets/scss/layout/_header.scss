@@ -25,19 +25,20 @@ header {
 
             .nav-li {
                 &:nth-child(1) {
-                    margin-right: auto; // Pousse les autres éléments à droite
+                    margin-right: auto;
                 }
+                
                 img {
                     height: variable.$logo-height;
                 }
-                a {
+                
+                &:not(:nth-child(1)) a {
                     @include mixin.link-underline-effect(variable.$color-header-link-default);
-                    transition: 0.3s ease; // Reste si tu veux une transition rapide sur les autres propriétés
-
-                    // Les liens de navigation ne sont pas le premier enfant (le logo)
-                    .nav-li:not(:nth-child(1)) & {
-                        // Le mixin gère l'effet de surlignage
-                    }
+                    transition: 0.3s ease;
+                }
+                
+                a {
+                    text-decoration: none;
                 }
             }
         }
@@ -45,12 +46,11 @@ header {
 
     #fixed-icon {
         position: fixed;
-        right: 40px; // Variable d'espacement si réutilisé
-        top: 25px; // Variable d'espacement si réutilisé
+        right: 40px; 
+        top: 25px; 
         z-index: variable.$z-index-fixed-icon;
     }
 
-    /* --- Slide Menu --- */
     #slide-menu {
         position: fixed;
         top: 0;
@@ -59,7 +59,7 @@ header {
         background-color: transparent;
         z-index: variable.$z-index-slide-menu;
 
-        transform: translateY(-200%); // Animation de sortie
+        transform: translateY(-200%); 
         transition: transform variable.$transition-default;
         pointer-events: none;
 
@@ -84,33 +84,31 @@ header {
 
                 a {
                     @include mixin.link-underline-effect(variable.$color-header-link-default);
-                    // Le mixin gère déjà l'effet de surlignage
                 }
             }
         }
     }
 
-    /* --- Navigation Icon (Hamburger) --- */
     #nav-icon {
         display: none;
         width: variable.$nav-icon-width;
         height: variable.$nav-icon-height;
         position: relative;
-        margin: 20px; // Variable d'espacement si réutilisé
+        margin: 20px; 
         transform: rotate(0deg);
         transition: .5s ease-in-out;
         cursor: pointer;
 
         &:hover{
             span:nth-child(2) {
-                right: -8px; // Reste spécifique si non variable
+                right: -8px; 
             }
         }
 
         span {
             display: block;
             position: absolute;
-            height: 4px; // Variable d'épaisseur
+            height: 4px; 
             width: 100%;
             background: variable.$color-nav-icon;
             opacity: 1;
@@ -133,9 +131,7 @@ header {
     }
 }
 
-/* --- Styles Dark Mode --- */
 
-// Styles Dark Mode pour le menu coulissant (actif si la classe est ajoutée au menu)
 #slide-menu.dark-mode {
 
     .slide-ul {
@@ -150,13 +146,11 @@ header {
         }
     }
 
-    // Lignes de l'icône de navigation dans le menu (si elles sont sur le menu ouvert)
     #nav-icon span {
         background-color: variable.$color-nav-icon-dark;
     }
 }
 
-// Styles Dark Mode pour le header principal (actif si la classe est ajoutée au header)
 header.dark-mode {
 
     nav .nav-ul .nav-li a {
@@ -167,7 +161,6 @@ header.dark-mode {
         }
     }
 
-    // Lignes de l'icône de navigation (pour le mode dark sur le header)
     #nav-icon span {
         background: variable.$color-nav-icon-dark;
     }
