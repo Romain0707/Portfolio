@@ -2,33 +2,33 @@ const GITHUB_USERNAME = 'Romain0707';
 const PROJECTS_CONFIG = [
     {
         repoName: 'Ohm-Sweet-Ohm',
-        image: '',
+        image: './assets/img/omhsweetohm.png',
         demoUrl: 'https://ohm-sweet-ohm-iota.vercel.app/'
     },
 
     {
         repoName: 'Mortgage-Repayment-Calculator',
-        image: '',
+        image: './assets/img/mortgage-calculator.png',
         demoUrl: 'https://front-end-mentor-mortgage-repayment.vercel.app/'
     },
     {
         repoName: 'Cerbaillance-Laboratory',
-        image: '',
+        image: './assets/img/cerbaillance.png',
         demoUrl: 'https://projet-commun-scientifique-xkp7.vercel.app/'
     },
     {
         repoName: 'Magic-The-Gathering',
-        image: '',
+        image: './assets/img/magic.png',
         demoUrl: 'https://projet-magic.vercel.app/'
     },
     {
         repoName: 'Espace-Renovation',
-        image: '',
+        image: './assets/img/renovation.png',
         demoUrl: 'https://projet-espace-renovation.vercel.app/'
     },
     {
         repoName: 'Green-Earth',
-        image: '',
+        image: './assets/img/green-earth.png',
         demoUrl: 'https://projet-green-earth.vercel.app/'
     }
 ];
@@ -37,6 +37,7 @@ const PROJECTS_CONFIG = [
 
 // DOM Elements
 const projectTimeline = document.getElementById('project-timeline');
+const projectShowcase = document.getElementById('timeline-view');
 const loadingContainer = document.getElementById('loading-container');
 const emptyState = document.getElementById('empty-state');
 const projectModal = document.getElementById('project-modal');
@@ -150,8 +151,10 @@ async function fetchProjects() {
         projects = results.filter(p => p !== null);
         
         loadingContainer.style.display = 'none';
+        projectShowcase.style.display = 'block';
         
         if (projects.length === 0) {
+            projectShowcase.style.display = 'none';
             emptyState.style.display = 'block';
             return;
         }
@@ -340,6 +343,6 @@ function closeModal() {
 function showErrorState() {
     loadingContainer.style.display = 'none';
     emptyState.style.display = 'block';
-    emptyState.querySelector('.empty-title').textContent = 'Error Loading Projects';
-    emptyState.querySelector('.empty-description').textContent = 'There was an error loading the projects. Please try again later.';
+    emptyState.querySelector('.empty-title').textContent = 'Erreur de chargement des projets';
+    emptyState.querySelector('.empty-description').textContent = 'Il y a eu un problème avec le chargement des projets, essayez plus tard, merci.';
 }

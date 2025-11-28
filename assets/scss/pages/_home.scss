@@ -77,147 +77,8 @@ body {
             } 
         }
 
-        #portfolio {
-            position: relative;
-            background-color: white;
-            margin-bottom: 10rem;
-
-            &::after {
-                content: '';
-                position: absolute;
-                z-index: 5;
-                height: 50px;
-                width: 100%;
-                top: -49px;
-                left: 0;
-                background-color: white;
-                clip-path: polygon(30% 0, 0% 100%, 100% 100%);
-            }
-            
-            .container {
-                max-width: 1250px;
-                margin: 0 auto;
-                padding-inline: 20px;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                gap: 5rem;
-
-                h2 {
-                    padding-top: 5rem;
-                    font-size: 32px;
-                    font-family: "Krona One", sans-serif;
-                }
-
-
-                .card-wrapper {
-                    max-width: 1100px;
-                    margin: 0 auto 35px;
-                    padding: 20px 10px;
-                    overflow: hidden;
-
-                    .card-list {
-                        list-style-type: none;
-
-                        .card-item {
-
-                            .card {
-                                position: relative;
-                                outline: 2px solid transparent;
-                                box-shadow: 0px 0px 10px 10px rgb(0,0,0,0.1);
-                                border-radius: 24px;
-                                background-color: white;
-                                padding: 20px;
-                                max-width: 400px;
-                                user-select: none;
-                                padding-bottom: 5rem;
-                                transition: 0.3s ease;
-                                scale: 1;
-                                height: 85%;
-
-                                &:hover {
-                                    outline-color: black;
-                                    scale: 1.01;
-                                }
-
-                                .card-img {
-                                    border-radius: 24px;
-                                    overflow: hidden;
-                                    height: 250px;
-                                    width: 100%;
-                                    margin-bottom: 20px;
-
-                                    img {
-                                        width: 100%;
-                                        height: 100%;
-                                        object-fit: cover;
-                                        object-position: center;
-                                    }
-
-                                }
-
-                                .card-content {
-                                    h3 {
-                                        font-family: "Krona One", sans-serif;
-                                        margin: 0;
-                                    }
-                                    p {
-                                        font-family: "Manrope", sans-serif;
-                                        max-width: 80%;
-                                        margin: 2rem 0rem;
-                                    }
-                                }
-
-                                .card-link {
-                                    position: absolute;
-                                    bottom: 1.5rem;
-                                    left: 50%;
-                                    transform: translate(-50%);
-                                    width: 100%;
-                                    display: flex;
-                                    justify-content: center;
-                                    gap: 2rem;
-                                    
-
-                                    a {
-                                        font-family: "Manrope", sans-serif;
-                                        text-decoration: none;
-                                        display: inline-block;
-                                        color: gray;
-                                        font-size: 20px;
-
-                                        svg {
-                                            position: relative;
-                                            top: 8px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .swiper-slide {
-                            margin-bottom: 3rem;
-                            height: auto;
-                        }
-                    }
-
-                    .swiper-pagination-bullet {
-                        height: 13px;
-                        width: 13px;
-                        opacity: 0.5;
-                        background: black;
-                    }
-
-                    .swiper-pagination-bullet-active {
-                        opacity: 1;
-                    }
-                    .swiper-slide-button {
-                        color: black;
-                    }
-                }
-            }  
-        }
-
         #competence {
+            padding-bottom: 12rem;
             .container {
                 max-width: 1250px;
                 margin: 0 auto;
@@ -233,7 +94,6 @@ body {
                     height:var(--height);
                     overflow: hidden;
                     mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
-                    margin-bottom: 12rem;
 
                     &:hover {
                         .slider-item {
@@ -255,7 +115,6 @@ body {
                             width: var(--width);
                             height: var(--height);
                             position: absolute;
-                            top: -10px;
                             left: 100%;
                             animation: autoRun 12s linear infinite;
                             animation-delay: calc( (12s / var(--quantity) * (var(--position) - 1)));
@@ -308,16 +167,20 @@ body {
                         display: flex;
                         flex: 1;
                         flex-direction: column;
-                        background: white;
-                        border-radius: 24px;
+                        background: black;
+                        border: 1px solid white;
+                        border-top: 4px solid white;
+                        
                         padding: 50px;
 
                         input:not([type="submit"]) {
                             padding: 1rem;
                             appearance: none;
                             border: none;
-                            border-bottom: 1px solid gray;
+                            background: black;
+                            border-bottom: 1px solid white;
                             font-family: "Manrope", sans-serif;
+                            color: white;
 
                             &:focus {
                                 outline: none;
@@ -327,22 +190,25 @@ body {
                         input:is([type="submit"]) {
                             align-self: center;
                             appearance: none;
-                            background-color: white;
+                            background-color: black;
                             border: none;
-                            color: black;
-                            border: 1px solid black;
-                            border-top: 4px solid black;
+                            color: white;
+                            border: 1px solid white;
+                            border-top: 4px solid white;
                             font-family: "Krona One", sans-serif;
                             padding: 14px 25px;
                             transition: background-color 0.3s ease, color 0.3s ease;  
 
                             &:hover {
-                                background-color: black;
-                                color: white;
+                                background-color: white;
+                                color: black;
                             }
                         }
 
                         textarea {
+                            background-color: black;
+                            border-color: white;
+                            color: white;
                             margin-block: 2rem;
                             appearance: none;
                             padding: 1rem;
@@ -365,6 +231,7 @@ body {
                     align-items: center;
 
                     .line {
+                        margin-block: 1rem;
                         background-color: white;
                         height: 2rem;
                         width: 1px;
@@ -373,6 +240,7 @@ body {
                     p {
                         font-family: "Krona One", sans-serif;
                         color: white;
+                        margin-bottom: 1rem;
                     }
                 }
                 }

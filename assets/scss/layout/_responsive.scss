@@ -11,12 +11,6 @@
                 }
             }
         }
-
-    }
-
-    .swiper-slide-button {
-        color: black;
-        display: none;
     }
 
     #nav-icon {
@@ -35,7 +29,7 @@
 
             .info-container {
                 margin-left: 0px!important;
-                margin-top: 5rem;
+                margin-top: 5rem!important;
             }
         }
     
@@ -51,4 +45,34 @@
 
 @media screen and (max-width: 500px) {
     
+}
+
+
+
+/* --- 9. Responsive --- */
+@media screen and (max-width: 768px) {
+  .projects-showcase { height: 500px!important; }
+  .project-node { width: 300px!important; height: 450px!important; }
+
+  /* Ajustement des boutons de nav sur mobile */
+  #prev-btn { left: 5px!important; }
+  #next-btn { right: 5px!important; }
+
+  .project-node.prev { transform: translateX(-50%) translateZ(-150px) rotateY(30deg)!important; scale: 0;}
+  .project-node.next { transform: translateX(50%) translateZ(-150px) rotateY(-30deg)!important; scale: 0;}
+
+  .modal-image-container { height: 200px!important; }
+  .modal-title { font-size: 1.5rem!important; }
+}
+
+@media screen and (max-width: 450px) {
+  .projects-showcase { height: 400px!important; }
+  .project-node { width: 250px!important; height: 400px!important; }
+
+  .projects-timeline-btn { top: 110%!important; }
+  .projects-timeline-indicator { display: none;}
+
+  .modal-image-container { height: 200px!important; }
+  .modal-image-button { padding: 5px 8px!important; font-size: 0.8rem!important; }
+  .modal-title { font-size: 1.2rem!important; }
 }
