@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as variable;
+
+
+@media screen and (max-width: 768px) {
+
+    header {
+        .nav-ul {
+            .nav-li{
+                &:not(:first-child) {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    .swiper-slide-button {
+        color: black;
+        display: none;
+    }
+
+    #nav-icon {
+        display: block!important;
+    }
+
+    main {
+        #hero {
+            .container {
+                
+            }
+        }
+
+        .contact-container {
+            flex-direction: column;
+
+            .info-container {
+                margin-left: 0px!important;
+                margin-top: 5rem;
+            }
+        }
+    
+    h1 {
+        font-size: 30px!important;
+    }
+    h2 {
+        font-size: 20px!important;
+    }
+
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+}

@@ -1,0 +1,781 @@
+@font-face {
+  font-family: "Krona One";
+  src: url(../fonts/Krona_One/KronaOne-Regular.ttf);
+}
+@font-face {
+  font-family: "Manrope";
+  src: url(../fonts/Manrope/Manrope-VariableFont_wght.ttf);
+}
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+body main #hero {
+  position: relative;
+  height: 100vh;
+}
+body main #hero video {
+  position: absolute;
+  z-index: -10;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  filter: brightness(40%);
+}
+body main #hero .container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+body main #hero .container h1 {
+  margin: 0;
+  color: white;
+  font-size: 60px;
+  font-family: "Krona One", sans-serif;
+  margin-bottom: 1rem;
+}
+body main #hero .container h2 {
+  margin: 0;
+  color: white;
+  font-size: 32px;
+  font-family: "Krona One", sans-serif;
+  font-weight: 100;
+  opacity: 80%;
+  margin-bottom: 0.5rem;
+}
+body main #hero .container p {
+  color: white;
+  font-size: 16px;
+  line-height: 2rem;
+  max-width: 560px;
+  font-family: "Manrope", sans-serif;
+  margin-bottom: 2rem;
+}
+body main #hero .container a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-top: 4px solid white;
+  padding: 0px 25px 14px 25px;
+  font-family: "Krona One", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body main #hero .container a svg {
+  position: relative;
+  bottom: -10px;
+}
+body main #hero .container a:hover {
+  background-color: white;
+  color: black;
+}
+body main #portfolio {
+  position: relative;
+  background-color: white;
+  margin-bottom: 10rem;
+}
+body main #portfolio::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  height: 50px;
+  width: 100%;
+  top: -49px;
+  left: 0;
+  background-color: white;
+  clip-path: polygon(30% 0, 0% 100%, 100% 100%);
+}
+body main #portfolio .container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+body main #portfolio .container h2 {
+  padding-top: 5rem;
+  font-size: 32px;
+  font-family: "Krona One", sans-serif;
+}
+body main #portfolio .container .card-wrapper {
+  max-width: 1100px;
+  margin: 0 auto 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+body main #portfolio .container .card-wrapper .card-list {
+  list-style-type: none;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card {
+  position: relative;
+  outline: 2px solid transparent;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  background-color: white;
+  padding: 20px;
+  max-width: 400px;
+  user-select: none;
+  padding-bottom: 5rem;
+  transition: 0.3s ease;
+  scale: 1;
+  height: 85%;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card:hover {
+  outline-color: black;
+  scale: 1.01;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card .card-img {
+  border-radius: 24px;
+  overflow: hidden;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card .card-content h3 {
+  font-family: "Krona One", sans-serif;
+  margin: 0;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card .card-content p {
+  font-family: "Manrope", sans-serif;
+  max-width: 80%;
+  margin: 2rem 0rem;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card .card-link {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card .card-link a {
+  font-family: "Manrope", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  color: gray;
+  font-size: 20px;
+}
+body main #portfolio .container .card-wrapper .card-list .card-item .card .card-link a svg {
+  position: relative;
+  top: 8px;
+}
+body main #portfolio .container .card-wrapper .card-list .swiper-slide {
+  margin-bottom: 3rem;
+  height: auto;
+}
+body main #portfolio .container .card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: black;
+}
+body main #portfolio .container .card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+body main #portfolio .container .card-wrapper .swiper-slide-button {
+  color: black;
+}
+body main #competence .container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+body main #competence .container h2 {
+  font-size: 32px;
+  font-family: "Krona One", sans-serif;
+  margin-bottom: 5rem;
+}
+body main #competence .container .slider {
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+  margin-bottom: 12rem;
+}
+body main #competence .container .slider:hover .slider-item {
+  animation-play-state: paused !important;
+  filter: grayscale(1);
+}
+body main #competence .container .slider .slider-list {
+  position: relative;
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+}
+body main #competence .container .slider .slider-list .slider-item {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  top: -10px;
+  left: 100%;
+  animation: autoRun 12s linear infinite;
+  animation-delay: calc(12s / var(--quantity) * (var(--position) - 1));
+}
+body main #competence .container .slider .slider-list .slider-item:hover {
+  filter: grayscale(0);
+}
+body main #competence .container .slider .slider-list .slider-item svg {
+  width: 100%;
+}
+body main #contact {
+  position: relative;
+  background-color: black;
+  padding-bottom: 20rem;
+}
+body main #contact::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  height: 50px;
+  width: 100%;
+  top: -49px;
+  left: 0;
+  background-color: black;
+  clip-path: polygon(70% 0, 0% 100%, 100% 100%);
+}
+body main #contact .container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+body main #contact .container h2 {
+  color: white;
+  padding-top: 7rem;
+  font-size: 32px;
+  font-family: "Krona One", sans-serif;
+  margin-bottom: 5rem;
+}
+body main #contact .container .contact-container {
+  display: flex;
+}
+body main #contact .container .contact-container form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background: white;
+  border-radius: 24px;
+  padding: 50px;
+}
+body main #contact .container .contact-container form input:not([type=submit]) {
+  padding: 1rem;
+  appearance: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-family: "Manrope", sans-serif;
+}
+body main #contact .container .contact-container form input:not([type=submit]):focus {
+  outline: none;
+}
+body main #contact .container .contact-container form input:is([type=submit]) {
+  align-self: center;
+  appearance: none;
+  background-color: white;
+  border: none;
+  color: black;
+  border: 1px solid black;
+  border-top: 4px solid black;
+  font-family: "Krona One", sans-serif;
+  padding: 14px 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body main #contact .container .contact-container form input:is([type=submit]):hover {
+  background-color: black;
+  color: white;
+}
+body main #contact .container .contact-container form textarea {
+  margin-block: 2rem;
+  appearance: none;
+  padding: 1rem;
+  resize: none;
+  height: 10rem;
+  font-family: "Manrope", sans-serif;
+}
+body main #contact .container .contact-container form textarea:focus {
+  outline: none;
+}
+body main #contact .container .contact-container .info-container {
+  margin-left: 5rem;
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main #contact .container .contact-container .info-container .line {
+  background-color: white;
+  height: 2rem;
+  width: 1px;
+}
+body main #contact .container .contact-container .info-container p {
+  font-family: "Krona One", sans-serif;
+  color: white;
+}
+
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+header {
+  position: absolute;
+  z-index: 2000;
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-family: "Krona One", sans-serif;
+}
+header nav {
+  max-width: 1250px;
+  margin: 0 auto;
+  width: 100%;
+  padding-inline: 20px;
+}
+header nav .nav-ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  gap: 3rem;
+}
+header nav .nav-ul .nav-li:nth-child(1) {
+  margin-right: auto;
+}
+header nav .nav-ul .nav-li img {
+  height: 60px;
+}
+header nav .nav-ul .nav-li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+header #fixed-icon {
+  position: fixed;
+  right: 40px;
+  top: 25px;
+  z-index: 99999;
+}
+header #slide-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000;
+  transform: translateY(-200%);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+header #slide-menu.open {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+header #slide-menu .slide-ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+}
+header #slide-menu .slide-ul .slide-li a {
+  text-decoration: none;
+  color: white;
+}
+header #nav-icon {
+  display: none;
+  width: 40px;
+  height: 45px;
+  position: relative;
+  margin: 20px;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+header #nav-icon:hover span:nth-child(2) {
+  right: -8px;
+}
+header #nav-icon span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: white;
+  opacity: 1;
+  right: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+header #nav-icon span:nth-child(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+header #nav-icon span:nth-child(2) {
+  top: 12px;
+  transform-origin: left center;
+}
+header #nav-icon span:nth-child(3) {
+  top: 24px;
+  transform-origin: left center;
+}
+
+footer {
+  background-color: black;
+  border-top: 1px solid white;
+  text-align: center;
+}
+footer p {
+  color: white;
+  margin: 0;
+  padding: 2rem;
+  font-family: "Manrope", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  header .nav-ul .nav-li:not(:first-child) {
+    display: none;
+  }
+  .swiper-slide-button {
+    color: black;
+    display: none;
+  }
+  #nav-icon {
+    display: block !important;
+  }
+  main .contact-container {
+    flex-direction: column;
+  }
+  main .contact-container .info-container {
+    margin-left: 0px !important;
+    margin-top: 5rem;
+  }
+  main h1 {
+    font-size: 30px !important;
+  }
+  main h2 {
+    font-size: 20px !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
