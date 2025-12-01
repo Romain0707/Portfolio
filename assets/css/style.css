@@ -551,7 +551,7 @@ body main #contact .container .contact-container .thanks.active .thanks-content 
 }
 body main #contact .container .contact-container .thanks .thanks-content {
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   max-height: 90vh;
   background-color: #ffffff;
   overflow-y: auto;
@@ -560,17 +560,14 @@ body main #contact .container .contact-container .thanks .thanks-content {
   transition: transform 0.3s ease;
   border-radius: 36px;
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 36px;
 }
 body main #contact .container .contact-container .thanks .thanks-content p {
   font-size: 2rem;
+  font-family: "Krona One", sans-serif;
 }
 body main #contact .container .contact-container .thanks .thanks-content .thanks-close {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  right: 15px;
   width: 36px;
   height: 36px;
   border-radius: 50%;

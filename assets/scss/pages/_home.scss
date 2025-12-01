@@ -255,7 +255,7 @@ body {
 
                         .thanks-content {
                             width: 90%;
-                            max-width: 600px; // Variable si réutilisé
+                            max-width: 700px; // Variable si réutilisé
                             max-height: 90vh; // Variable si réutilisé
                             background-color: variable.$color-white;
                             overflow-y: auto;
@@ -264,20 +264,17 @@ body {
                             transition: transform variable.$transition-default;
                             border-radius: 36px;
                             padding: 20px;
-                            display: flex;
-                            justify-content: space-between;
+                            display: grid;
+                            grid-template-columns: auto 36px;
 
 
                             p {
                                 font-size: variable.$font-size-h2;
-
+                                font-family: variable.$font-family-title;
                             }
                             
                             .thanks-close {
-                                position: absolute;
-                                top: 50%; 
-                                transform: translate(0, -50%);
-                                right: 15px;
+
                                 width: 36px;
                                 height: 36px;
                                 border-radius: 50%;
