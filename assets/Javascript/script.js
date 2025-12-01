@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('#slide-menu a').forEach(a => {
     a.addEventListener('click', () => {
       menu.classList.remove('open');
+      burger.classList.remove('cross');
     });
   });
   
@@ -84,3 +85,18 @@ document.addEventListener("DOMContentLoaded", () => {
   
   setTimeout(checkSectionBelowHeader, 50);
 });
+
+
+const message = document.getElementById('submit-message');
+const thanks = document.getElementById('thanks');
+const header = document.querySelector('header');
+
+message.addEventListener('click', function (event) {
+  event.preventDefault();
+  header.style.position = 'absolute';
+  thanks.classList.add('active');
+})
+
+thanks.addEventListener('click', function (event) {
+  thanks.classList.remove('active');
+})
