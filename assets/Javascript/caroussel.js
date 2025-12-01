@@ -272,6 +272,9 @@ function createTimelineNode(project, index) {
     return node;
 }
 
+
+const icon = document.getElementById('fixed-icon');
+
 // Modal Functions
 function openModal(project) {
     // Create the modal HTML with image overlay buttons
@@ -320,6 +323,9 @@ function openModal(project) {
     // Update the modal content
     projectModal.innerHTML = modalHTML;
     
+    //Hide burger Menu
+    icon.style.position = 'absolute';
+    
     // Re-attach event listeners for the new close button
     const newModalClose = document.getElementById('modal-close');
     newModalClose.addEventListener('click', closeModal);
@@ -334,6 +340,9 @@ function openModal(project) {
 function closeModal() {
     // Hide modal
     projectModal.classList.remove('active');
+
+    // Re face burger menu
+    icon.style.position = 'fixed';
     
     // Re-enable scrolling on background
     enableScroll();

@@ -90,13 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
 const message = document.getElementById('submit-message');
 const thanks = document.getElementById('thanks');
 const header = document.querySelector('header');
+const burger = document.getElementById('fixed-icon');
 
 message.addEventListener('click', function (event) {
   event.preventDefault();
   header.style.position = 'absolute';
   thanks.classList.add('active');
+  burger.style.position = 'absolute';
 })
 
-thanks.addEventListener('click', function (event) {
+thanks.addEventListener('click', function () {
   thanks.classList.remove('active');
+  header.style.position = 'fixed';
+  burger.style.position = 'fixed';
 })

@@ -308,6 +308,10 @@ template {
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body main #hero {
   position: relative;
   height: 100vh;
