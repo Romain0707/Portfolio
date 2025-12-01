@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as mixin;
 
 header {
-    position: absolute;
+    position: fixed;
     z-index: variable.$z-index-header;
     border-bottom: 1px solid variable.$color-header-border;
     width: 100%;
@@ -64,7 +64,7 @@ header {
         pointer-events: none;
 
         &.open {
-            transform: translateY(0);
+            transform: translateY(10vh);
             pointer-events: auto;
         }
 
@@ -152,6 +152,7 @@ header {
 }
 
 header.dark-mode {
+    border-bottom: 1px solid variable.$color-black;
 
     nav .nav-ul .nav-li a {
         color: variable.$color-header-link-dark;

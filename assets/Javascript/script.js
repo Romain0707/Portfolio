@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const burger = document.getElementById('nav-icon');
   const menu = document.getElementById('slide-menu');
   const header = document.querySelector('header');
+  const logo = document.getElementById('logo');
 
   burger.addEventListener('click', () => {
     menu.classList.toggle('open');
@@ -13,22 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.remove('open');
     });
   });
-
-  
-  const ioHeader = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        
-        menu.style.top = "10vh";
-      } else {
-        
-        menu.style.top = "0";
-      }
-    });
-  }, { root: null, threshold: 0.01 });
-
-  ioHeader.observe(header);
-
   
   const headerHeight = () => header.offsetHeight || (window.innerHeight * 0.1); 
 
@@ -74,9 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isWhite) {
         menu.classList.add('dark-mode');   
         header.classList.add('dark-mode'); 
+        logo.setAttribute('src', 'assets/img/logo-noir.png');
       } else {
         menu.classList.remove('dark-mode');
         header.classList.remove('dark-mode'); 
+        logo.setAttribute('src', 'assets/img/logo.png');
       }
 
       ticking = false;

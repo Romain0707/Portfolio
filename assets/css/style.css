@@ -537,7 +537,7 @@ body main #contact .container .contact-container .info-container p {
   }
 }
 header {
-  position: absolute;
+  position: fixed;
   z-index: 2000;
   border-bottom: 1px solid lightgray;
   width: 100%;
@@ -611,7 +611,7 @@ header #slide-menu {
   pointer-events: none;
 }
 header #slide-menu.open {
-  transform: translateY(0);
+  transform: translateY(10vh);
   pointer-events: auto;
 }
 header #slide-menu .slide-ul {
@@ -708,6 +708,9 @@ header #nav-icon.cross span:nth-child(3) {
   background-color: #000000;
 }
 
+header.dark-mode {
+  border-bottom: 1px solid #000000;
+}
 header.dark-mode nav .nav-ul .nav-li a {
   color: #000000;
 }
